@@ -1,0 +1,215 @@
+/* CoursesPage.css */
+.courses-page {
+  padding: 40px 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  bottom: 60px;
+}
+
+.search-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.search-btn {
+  margin-left: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for Course Cards */
+
+.course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.course-card {
+  background: linear-gradient(to left, #420217,#C84C09);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-card-body {
+  padding: 20px;
+}
+.course-card-body h5 {
+  font-size: 1.25rem;   /* Increased font size */
+  font-weight: 600;     /* Make the title bold */
+  margin-bottom: 10px;
+  color: white;
+  /* Dark color for visibility */
+}
+
+.course-details p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: white;
+}
+
+.course-description {
+  font-size: 0.95rem;
+  color: white;
+  margin: 10px 0;
+}
+
+.enroll-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.enroll-btn:hover {
+  background-color: #0056b3;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-btn {
+  margin-left: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .course-cards {
+      padding-top: 150px;
+      justify-content: center;
+      gap: 15px;
+  }
+
+  .course-card {
+      max-width: 100%;
+  }
+
+  .search-container {
+      flex-direction: column;
+      align-items: center;  
+      position:fixed;
+      bottom: 430px;
+      left: 95px;
+  }
+
+  .search-input {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+}
+
+/* Skeleton Loader */
+.skeleton-card {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  background: linear-gradient(to left, #420217,#C84C09);
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-thumbnail {
+  height: 200px;
+  background-color: #e0e0e0;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-body {
+  padding: 20px;
+}
+
+.skeleton-title {
+  width: 80%;
+  height: 20px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-details {
+  width: 60%;
+  height: 15px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton-button {
+  width: 100%;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 10px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Shimmer Effect Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.skeleton-thumbnail,
+.skeleton-title,
+.skeleton-details,
+.skeleton-button {
+  background: linear-gradient(90deg, #716666 25%, #bd5c5c 50%, #716666 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}

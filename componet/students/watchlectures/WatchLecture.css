@@ -1,0 +1,397 @@
+.watch-lecture-container {
+  padding: 20px;
+}
+
+/* Video Section */
+.video-card {
+  padding-right: 20px;
+  width: 69%;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.video-description {
+  font-size: 16px;
+  color: #606060;
+}
+
+/* Comments Section */
+.comments-card {
+  margin-top: 20px;
+  width: 66%;
+  background: transparent; /* Transparent Background */
+  border-radius: 12px;
+  padding: 15px;
+  backdrop-filter: blur(8px); /* Subtle Blur Effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 0.5px solid rgba(247, 240, 240, 0.2);
+}
+
+/* Comments Heading */
+.comments-card h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 6px;
+}
+
+/* Comments List */
+.comments-list {
+  margin-top: 15px;
+  padding: 0;
+}
+
+/* Individual Comment */
+.comments-card .list-group-item {
+  background: rgba(0, 0, 0, 0.1); /* Light Transparent Background */
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect on Comment */
+.comments-card .list-group-item:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* No Comments Message */
+.comments-card p {
+  text-align: center;
+  color: #ddd;
+  font-style: italic;
+}
+
+/* Comment Input Field */
+.comment-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comment-form input {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px;
+  color: #ffffff;
+  transition: border 0.3s ease-in-out, background 0.3s;
+}
+
+.comment-form input::placeholder {
+  color: #ddd;
+}
+
+.comment-form input:focus {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+/* Post Comment Button */
+.comment-btn {
+  height: 42px;
+  background: rgba(131, 114, 255, 0.2);
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+
+
+/* Sidebar - Upcoming Lectures */
+.upcoming-lectures {
+  position: relative;
+right: -820px;
+bottom: 950px;
+  
+  width: 320px;
+  max-height: 80vh;
+  overflow-y: auto;
+  /* background: #e19393; */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #bc8d8d;
+}
+
+/* Sidebar Heading */
+.upcoming-lectures h5 {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+/* Individual Lecture Items */
+.lecture-item {
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Lecture Card - Row Layout */
+.lecture-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Hover Effect for Lecture Card */
+.lecture-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Lecture Thumbnail */
+.lecture-thumbnail {
+  width: 90px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Lecture Info */
+.lecture-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Lecture Title */
+.lecture-info strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #007bff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Watch Lecture Button */
+.lecture-item button {
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: background 0.3s, transform 0.2s;
+  width: 100%;
+}
+
+.lecture-item button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Scrollbar Styling */
+.upcoming-lectures::-webkit-scrollbar {
+  width: 6px;
+}
+
+.upcoming-lectures::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 6px;
+}
+.back_btn_container{
+  position: relative;
+   top: px;
+   left: -40px;
+   width: 70px;
+   color: black;
+ }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .video-section {
+      max-width: 750px;
+  }
+  .comments-section, .lecture-list {
+      max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .watch-lecture-container {
+      padding: 10px;
+  }
+  .video-section, .comments-section, .lecture-list {
+      max-width: 100%;
+      padding: 10px;
+  }
+  .comments-section h2 {
+      font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  .watch-lecture-container {
+      gap: 15px;
+      padding-top: 200px;
+     
+  }
+  .upcoming-lectures {
+    position: relative;
+  right: 0px;
+  bottom: 0px;
+  
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  /* background: #e19393; */
+  border-radius: 5px;
+  padding: 4px;
+  /* border: 0.5px solid #f8f1f1; */
+}
+  .comments-section h2 {
+      font-size: 1.1rem;
+  }
+
+  .comments-card {
+    margin-top: 20px;
+    width: 130%;
+    padding: 4px;  margin-left: -40px;
+  }
+  .video-card {
+    width: 130%;
+    height: auto;
+    margin-left: -40px;
+    background-color: #181818; /* Dark YouTube-like background */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 410%;
+    height: 200px; /* Fixed width for better responsiveness */
+    padding-top: 90.25%; /* Maintains 16:9 aspect ratio (YouTube standard) */
+margin-left: -120px;
+margin-top: 20px;
+  }
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Rounded corners for a sleek look */
+}
+
+  .back_btn_container{
+    position: relative;
+     top: px;
+     left: -40px;
+     width: 50px;
+     color: black;
+   }
+   .video-card .video-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .hr{
+    width: "490%";
+    margin-left:"-110px";
+    margin-top: "10px";
+  }
+}
+
+
+/* WatchLecture.css */
+.skeleton-thumbnail {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 8px;
+}
+
+.skeleton-description {
+  height: 14px;
+  width: 90%;
+  margin-bottom: 5px;
+}
+
+.skeleton-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.skeleton-comment {
+  height: 14px;
+  width: 80%;
+  margin-bottom: 8px;
+}
+
+.skeleton-shimmer {
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(90deg, #f4f4f4 25%, #e0e0e0 50%, #f4f4f4 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -1,0 +1,264 @@
+/* StudentCorner.css */
+
+/* Container Styling */
+.student-corner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  height: 100vh;
+}
+
+/* Title */
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Search and Filter Section */
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-box,
+.filter-select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  max-width: 250px;
+}
+
+.search-box:focus,
+.filter-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Reset button */
+.reset-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: #c82333;
+}
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Course Card */
+.course-card {
+  width: 100%;
+  max-width: 280px;
+  height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Image */
+.course-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+/* Card Body */
+.course-card .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* Course Text */
+.course-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.instructor,
+.price,
+.category {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* View Button */
+.view-btn {
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #0056b3;
+}
+
+/* No Courses Found Message */
+.no-courses {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff4d4d;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .course-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .student-corner {
+    padding-top: 80px;
+  }
+  .course-card {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+}
+
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+}
+
+.dropdown-btn {
+  width:195px;
+  padding: 10px;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-btn:hover {
+  background-color: #f8f9fa;
+}
+
+/* Dropdown List */
+.dropdown-list {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease-in-out, opacity 0.2s;
+}
+
+/* Show dropdown on hover */
+.custom-dropdown:hover .dropdown-list {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-list li {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+  transition: background 0.2s;
+}
+
+.dropdown-list li:hover {
+  background: #f8f9fa;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loaderSpin {
+  width: 100px;
+height: 90px;
+  aspect-ratio: 1;
+  color: #854f1d;
+  border-radius: 50%;
+  display: grid;
+  background: 
+    conic-gradient(from 90deg at 4px 4px,#0000 90deg,currentColor 0)
+    -4px -4px/calc(50% + 2px) calc(50% + 2px),
+    radial-gradient(farthest-side,currentColor 6px,#0000 7px calc(100% - 6px),currentColor calc(100% - 5px)) no-repeat;
+  animation: l10 2s infinite linear;
+  position: relative;
+  bottom: 0px;
+  top:80px;
+  left: 500px;
+}
+.loaderSpin:before {
+  content: "";
+  border-radius: inherit;
+  background: inherit;
+  transform: rotate(45deg);
+}
+@keyframes l10 {to{transform: rotate(.5turn)}}
