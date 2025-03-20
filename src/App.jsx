@@ -11,7 +11,7 @@ import CourseDetailsPage from '../componet/coursedetails/CourseDetailsPage';
 import CourseVideoPage from '../componet/CourseVideoPage/CourseVideoPage';
 import { useUser } from '../context/authContaxt';
 import StudentDashboard from '../componet/students/dasbord/Dashboard';
-import InstructorDashboard from '../componet/instructer/instructDeshbord/deshbord';
+import InstructorDashboard from '../componet/instructer/instructDeshbord/Deshbord';
 import InstructorNavbar from '../componet/instructer/instructnavbar/Navbar';
 import UploadCourse from '../componet/instructer/courseuploaded/Courseupload';
 import UploadLecture from '../componet/instructer/AddLecture/AddLecture';
