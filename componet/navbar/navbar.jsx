@@ -3,62 +3,66 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import 'font-awesome/css/font-awesome.min.css';
-import {notifySuccess} from '../notification/Notification'
+import { notifySuccess } from '../notification/Notification';
 import { useUser } from '../../context/authContaxt';
 import axios from 'axios';
-import LoginStatus from '../../src/Loginstatus';
 
 const LeftSidebarNavbar = () => {
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-
   const [isLogin, setIsLogin] = useState(false);
-  const { userId, loginStatus,updateUser ,usertype ,usertypeInstru,logout} = useUser(); // Access the userId and loginStatus from context
-  // console.log("UserID",userId);
-  // console.log("status",loginStatus);
-  let {logout2} = useUser();
+  const { userId, loginStatus, updateUser, usertype, usertypeInstru, logout2 } = useUser();
   const navigate = useNavigate();
-  console.log("UserSt in navsae",usertype);
-console.log("UserIn in navsae",usertypeInstru);
 
   // Sync `isLogin` state with `sessionStorage`
   useEffect(() => {
-    const isUserLoggedIn = sessionStorage.getItem('LoginStatus') === 'true'; // Check sessionStorage value
-    console.log("statusinnav",isUserLoggedIn);
-    
+    const isUserLoggedIn = sessionStorage.getItem('LoginStatus') === 'true';
+    console.log("statusinnav", isUserLoggedIn);
     setIsLogin(isUserLoggedIn);
   }, [loginStatus]);
 
   const handleLogin = () => {
-    navigate('/login'); // Redirect to login page
+    navigate('/login');
   };
 
   const handleRegister = () => {
-    navigate('/login'); // Redirect to register page
+    navigate('/login');
   };
 
-  //handelLogOut
-  const handleLogout = async() => {
-
-    
+  const handleLogout = async () => {
     // Clear session storage and reset state
-    const userid= localStorage.getItem('Userid'); // Default to 'guest'
+    const userid = localStorage.getItem('Userid');
+    try {
       const logout = await axios.post(`${API_URL}/api/auth/logout/${userid}`);
-      if(logout){
+      if (logout) {
         sessionStorage.removeItem('isLogin');
         sessionStorage.removeItem('userType');
         sessionStorage.removeItem('LoginStatus');
+        sessionStorage.removeItem('UsertypeStudent');
+        sessionStorage.removeItem('UsertypeInstru');
         localStorage.removeItem('Userid');
 
         logout2();
         
         notifySuccess("Logged out successfully!");
         updateUser(null, 'false');
-        navigate("/")
-//alert('You have been logged out.');
- //window.location.reload();     
+        navigate("/");
       }
+    } catch (error) {
+      console.error("Logout Error:", error);
+      // Still clear local storage and session even if API call fails
+      sessionStorage.removeItem('isLogin');
+      sessionStorage.removeItem('userType');
+      sessionStorage.removeItem('LoginStatus');
+      sessionStorage.removeItem('UsertypeStudent');
+      sessionStorage.removeItem('UsertypeInstru');
+      localStorage.removeItem('Userid');
+      
+      logout2();
+      notifySuccess("Logged out successfully!");
+      updateUser(null, 'false');
+      navigate("/");
+    }
   };
-  
   
   return (
     <Navbar fixed="top" bg="dark" expand="lg" className="left-navbar">
@@ -84,18 +88,16 @@ console.log("UserIn in navsae",usertypeInstru);
               Contact
             </Nav.Link>
       
-            
             {/* Conditional Rendering: Show LoginStatus or Auth Buttons */}
             {isLogin ? (
               <Button
-               variant="primary"
-               className="auth-btn  d-flex align-items-center  logout"
-               onClick={handleLogout} >
-               {/* User icon */}
-               <i className="fas fa-user-circle" style={{ fontSize: '18px' }}></i>
-               Logout
-             </Button>
-             
+                variant="primary"
+                className="auth-btn d-flex align-items-center logout"
+                onClick={handleLogout}
+              >
+                <i className="fas fa-user-circle" style={{ fontSize: '18px' }}></i>
+                Logout
+              </Button>
             ) : (
               <>
                 <Button
